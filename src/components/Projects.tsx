@@ -6,11 +6,11 @@ import AnimatedElement from "./AnimatedElement";
 const projectsData = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "A scalable e-commerce backend built with Django, featuring a comprehensive API, payment processing, and inventory management.",
+    title: "Erp Platform",
+    description: "A scalable erp backend built with Django, featuring a comprehensive API, payment processing, and inventory management.",
     image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     tags: ["Django", "PostgreSQL", "Redis", "Docker"],
-    link: "#"
+    link: "serow.app"
   },
   {
     id: 2,

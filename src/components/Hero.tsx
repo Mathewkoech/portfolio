@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import AnimatedElement from "./AnimatedElement";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -92,11 +91,22 @@ const Hero = () => {
     };
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 100,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
       <canvas 
         ref={canvasRef} 
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
+        aria-hidden="true" 
       />
       <div className="container max-w-6xl mx-auto px-4 pt-16 md:pt-24 z-10">
         <div className="text-center">
@@ -119,31 +129,17 @@ const Hero = () => {
           <AnimatedElement delay={800}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <button 
-                onClick={() => {
-                  const element = document.getElementById('projects');
-                  if (element) {
-                    window.scrollTo({
-                      top: element.offsetTop - 100,
-                      behavior: 'smooth'
-                    });
-                  }
-                }}
+                onClick={() => scrollToSection('projects')}
                 className="shine-effect px-8 py-3 rounded-md bg-primary text-primary-foreground transition-all hover:shadow-lg"
+                aria-label="View My Work"
               >
                 View My Work
               </button>
               
               <button 
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    window.scrollTo({
-                      top: element.offsetTop - 100,
-                      behavior: 'smooth'
-                    });
-                  }
-                }}
+                onClick={() => scrollToSection('contact')}
                 className="px-8 py-3 rounded-md border border-input bg-transparent transition-all hover:bg-secondary"
+                aria-label="Contact Me"
               >
                 Contact Me
               </button>
@@ -151,6 +147,7 @@ const Hero = () => {
                 variant="outline" 
                 className="gap-2 bg-secondary/50 hover:bg-secondary text-foreground"
                 onClick={() => window.open('/resume.pdf', '_blank')}
+                aria-label="Download Resume"
               >
                 <Download size={16} />
                 Resume
@@ -172,6 +169,7 @@ const Hero = () => {
               strokeLinecap="round" 
               strokeLinejoin="round"
               className="mx-auto"
+              aria-hidden="true"
             >
               <path d="M12 5v14" />
               <path d="m19 12-7 7-7-7" />
