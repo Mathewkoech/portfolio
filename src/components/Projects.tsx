@@ -10,7 +10,7 @@ const projectsData = [
     description: "A scalable erp backend built with Django, featuring a comprehensive API, payment processing, and inventory management.",
     image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     tags: ["Django", "PostgreSQL", "Redis", "Docker"],
-    link: "serow.app"
+    link: "erp.serow.app"
   },
   {
     id: 2,
